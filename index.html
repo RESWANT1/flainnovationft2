@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive demo visualizing Recursive vs Recursively Enumerable languages and closure under complement - Theory of Computation educational tool">
+    <title>Recursive vs Recursively Enumerable - Theory of Computation Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <main class="card">
+            <h1 class="title">Recursive vs Recursively Enumerable</h1>
+            <p class="subtitle">Visualizing closure under complement — Theory of Computation Demo</p>
+
+            <div class="form-container">
+                <div class="input-group">
+                    <label for="language">Language (L)</label>
+                    <input 
+                        type="text" 
+                        id="language" 
+                        placeholder='e.g. "even numbers", "odd numbers", "binary", "length 3"'
+                        value="binary"
+                    >
+                </div>
+
+                <div class="input-group">
+                    <label for="inputString">Input w</label>
+                    <input 
+                        type="text" 
+                        id="inputString" 
+                        placeholder='e.g. "4", "7", "010101", "abc"'
+                        value="010101"
+                    >
+                </div>
+
+                <div class="mode-buttons">
+                    <button class="mode-btn active" id="reBtn" data-mode="RE">RE</button>
+                    <button class="mode-btn" id="rBtn" data-mode="R">Recursive (R)</button>
+                </div>
+
+                <button class="run-btn" id="runBtn">
+                    <span class="run-text">▶ Run Simulation</span>
+                    <span class="loading-text" style="display: none;">
+                        <span class="spinner">⏳</span> Running...
+                    </span>
+                </button>
+
+                <div class="output-container" id="outputContainer" style="display: none;">
+                    <pre id="output"></pre>
+                </div>
+
+                <div class="log-container" id="logContainer" style="display: none;">
+                    <strong>Execution Log:</strong>
+                    <div class="log-content" id="logContent"></div>
+                </div>
+            </div>
+
+            <div class="note">
+                Note: RE recognizer halts only on positives, complement recognizer halts only on
+                negatives — not closed under complement.
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Educational tool for Theory of Computation concepts</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
